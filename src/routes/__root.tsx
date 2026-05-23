@@ -78,10 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Georgia Waterproofing | Basement & Foundation Experts in Norcross, GA" },
       { name: "description", content: "Licensed & insured basement waterproofing, French drains, and crawl space encapsulation across Norcross & Metro Atlanta. Free estimates. Call (678) 580-5807." },
       { name: "author", content: "Georgia Waterproofing & Tree Service" },
-      { property: "og:title", content: "Georgia Waterproofing — Basement & Foundation Experts" },
-      { property: "og:description", content: "Stop water damage at the source. Free estimates across Metro Atlanta." },
+      { property: "og:title", content: "Georgia Waterproofing | Basement & Foundation Experts in Norcross, GA" },
+      { property: "og:description", content: "Licensed & insured basement waterproofing, French drains, and crawl space encapsulation across Norcross & Metro Atlanta. Free estimates. Call (678) 580-5807." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Georgia Waterproofing | Basement & Foundation Experts in Norcross, GA" },
+      { name: "twitter:description", content: "Licensed & insured basement waterproofing, French drains, and crawl space encapsulation across Norcross & Metro Atlanta. Free estimates. Call (678) 580-5807." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e9ba02b9-b0bd-4e7c-b0bf-d347386bd4f3/id-preview-5e29287b--fbb015a9-6338-4684-bd40-33fc789f62a3.lovable.app-1779558690898.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e9ba02b9-b0bd-4e7c-b0bf-d347386bd4f3/id-preview-5e29287b--fbb015a9-6338-4684-bd40-33fc789f62a3.lovable.app-1779558690898.png" },
     ],
     links: [
       {
