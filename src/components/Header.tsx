@@ -16,7 +16,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <img src={logo} alt="Georgia Waterproofing logo" width={40} height={40} className="h-10 w-10 transition-transform group-hover:scale-110" />
+          <img src={logo} alt="Georgia Waterproofing logo" className="h-12 w-12 object-contain transition-transform group-hover:scale-110" />
           <div className="flex flex-col leading-none">
             <span className="font-display text-base font-bold text-foreground">Georgia Waterproofing</span>
             <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">& Tree Service</span>

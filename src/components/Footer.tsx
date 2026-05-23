@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="" width={48} height={48} className="h-12 w-12" />
+              <img src={logo} alt="" className="h-14 w-14 object-contain" />
               <div>
                 <div className="font-display text-lg font-bold">Georgia Waterproofing</div>
                 <div className="text-xs uppercase tracking-[0.18em] text-white/60">& Tree Service</div>
