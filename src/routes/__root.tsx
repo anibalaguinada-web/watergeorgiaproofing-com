@@ -9,6 +9,9 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -72,21 +75,45 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Georgia Waterproofing | Basement & Foundation Experts in Norcross, GA" },
+      { name: "description", content: "Licensed & insured basement waterproofing, French drains, and crawl space encapsulation across Norcross & Metro Atlanta. Free estimates. Call (678) 580-5807." },
+      { name: "author", content: "Georgia Waterproofing & Tree Service" },
+      { property: "og:title", content: "Georgia Waterproofing — Basement & Foundation Experts" },
+      { property: "og:description", content: "Stop water damage at the source. Free estimates across Metro Atlanta." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" },
     ],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "Georgia Waterproofing & Tree Service",
+        image: "/logo.png",
+        telephone: "(678) 580-5807",
+        email: "waterproofingandtreeservices.ga@gmail.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "1327 Robin Hill Dr",
+          addressLocality: "Norcross",
+          addressRegion: "GA",
+          postalCode: "30093",
+          addressCountry: "US",
+        },
+        openingHours: "Mo-Fr 08:00-16:00",
+        priceRange: "$$",
+        areaServed: "Metro Atlanta",
+      }),
+    }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -113,7 +140,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+      <Toaster />
     </QueryClientProvider>
   );
 }
