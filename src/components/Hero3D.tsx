@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
-import logo from "@/assets/logo.png";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 export function Hero3D() {
   return (
@@ -36,8 +36,16 @@ export function Hero3D() {
         animate={{ y: [0, -18, 0], rotateX: [0, 6, 0], rotateY: [0, -8, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="relative h-60 w-60 overflow-hidden rounded-3xl bg-white/10 p-4 shadow-water backdrop-blur-sm border border-white/20">
-          <img src={logo} alt="Georgia Waterproofing logo" className="h-full w-full object-contain drop-shadow-2xl" />
+        <div className="relative h-60 w-60 overflow-hidden rounded-3xl bg-white/10 shadow-water backdrop-blur-sm border border-white/20">
+          <video
+            src={heroVideo.url}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="h-full w-full object-cover"
+          />
         </div>
       </motion.div>
 
