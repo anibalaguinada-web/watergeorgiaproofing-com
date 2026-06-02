@@ -8,12 +8,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="" className="h-14 w-14 object-contain" />
-              <div>
-                <div className="font-display text-lg font-bold">Georgia Waterproofing</div>
-                <div className="text-xs uppercase tracking-[0.18em] text-white/60">& Tree Service</div>
-              </div>
+            <div className="flex items-center gap-4">
+              <img src={logo} alt="Georgia Waterproofing & Tree Service" className="h-20 w-auto object-contain" />
             </div>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-white/70">
               Norcross-based experts in basement waterproofing, French drains, and crawl space encapsulation. Licensed, insured, and trusted across Metro Atlanta.
