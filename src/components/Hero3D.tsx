@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Droplets, Shield } from "lucide-react";
+import { Shield } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function Hero3D() {
   return (
@@ -35,9 +36,8 @@ export function Hero3D() {
         animate={{ y: [0, -18, 0], rotateX: [0, 6, 0], rotateY: [0, -8, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="relative h-44 w-44 rounded-full bg-gradient-accent shadow-water" style={{ borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%" }}>
-          <div className="absolute inset-3 rounded-full bg-gradient-to-br from-white/40 to-transparent" style={{ borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%" }} />
-          <Droplets className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-16 w-16 text-white drop-shadow-lg" />
+        <div className="relative h-60 w-60 overflow-hidden rounded-3xl bg-white/10 p-4 shadow-water backdrop-blur-sm border border-white/20">
+          <img src={logo} alt="Georgia Waterproofing logo" className="h-full w-full object-contain drop-shadow-2xl" />
         </div>
       </motion.div>
 
