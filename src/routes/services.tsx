@@ -1,20 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Seo } from "@/lib/Seo";
 import { ArrowRight, CheckCircle2, Droplets, ShieldCheck, Wrench, Hammer, Waves, Gauge } from "lucide-react";
 
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Waterproofing Services | Georgia Waterproofing — Norcross, GA" },
-      { name: "description", content: "Basement waterproofing, French drain installation, crawl space encapsulation, and sump pump systems across Metro Atlanta. Free estimates." },
-      { property: "og:title", content: "Our Waterproofing Services" },
-      { property: "og:description", content: "Comprehensive waterproofing solutions for Metro Atlanta homes." },
-      { property: "og:url", content: "/services" },
-    ],
-    links: [{ rel: "canonical", href: "/services" }],
-  }),
-  component: ServicesPage,
-});
 
 const services = [
   {
@@ -55,9 +43,14 @@ const services = [
   },
 ];
 
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <>
+      <Seo
+        title="Waterproofing Services | Georgia Waterproofing — Norcross, GA"
+        description="Basement waterproofing, French drain installation, crawl space encapsulation, and sump pump systems across Metro Atlanta. Free estimates."
+        path="/services"
+      />
       <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
