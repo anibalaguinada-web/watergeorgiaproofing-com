@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 export function Hero3D() {
   return (
@@ -38,7 +37,7 @@ export function Hero3D() {
       >
         <div className="relative h-60 w-60 overflow-hidden rounded-3xl bg-white/10 shadow-water backdrop-blur-sm border border-white/20">
           <video
-            src={heroVideo.url}
+            src="/hero-video.mp4"
             autoPlay
             loop
             muted
