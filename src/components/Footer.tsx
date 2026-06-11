@@ -30,7 +30,7 @@ export function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Contact</h4>
             <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-accent" /><a href="tel:+16785805807" className="hover:text-accent">(678) 580-5807</a></li>
-              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-accent" /><a href="mailto:waterproofingandtreeservices.ga@gmail.com" className="hover:text-accent break-all">waterproofingandtreeservices.ga@gmail.com</a></li>
+              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-accent" /><a href="mailto:sales@watergeorgiaproofing.com" className="hover:text-accent break-all">sales@watergeorgiaproofing.com</a></li>
               <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-accent" /><span>1327 Robin Hill Dr<br/>Norcross, GA 30093</span></li>
               <li className="flex gap-2"><Clock className="h-4 w-4 mt-0.5 text-accent" /><span>Mon–Fri 8:00 AM – 4:00 PM<br/>Sat–Sun Closed</span></li>
             </ul>
