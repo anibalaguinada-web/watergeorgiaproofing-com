@@ -33,7 +33,7 @@ export default function ContactPage() {
         `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nMessage:\n${message}`,
       );
       // Open user's mail client pre-filled with the request.
-      window.location.href = `mailto:waterproofingandtreeservices.ga@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:sales@watergeorgiaproofing.com?subject=${subject}&body=${body}`;
       setDone(true);
       toast.success("Opening your email app. We'll be in touch within 1 business day.");
       (e.currentTarget as HTMLFormElement).reset();
@@ -84,7 +84,7 @@ export default function ContactPage() {
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-accent text-accent-foreground"><Mail className="h-5 w-5" /></span>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Email</div>
-                    <a href="mailto:waterproofingandtreeservices.ga@gmail.com" className="font-semibold text-foreground hover:text-accent break-all">waterproofingandtreeservices.ga@gmail.com</a>
+                    <a href="mailto:sales@watergeorgiaproofing.com" className="font-semibold text-foreground hover:text-accent break-all">sales@watergeorgiaproofing.com</a>
                   </div>
                 </li>
                 <li className="flex gap-3">
