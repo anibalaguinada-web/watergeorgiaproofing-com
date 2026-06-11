@@ -1,5 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Seo } from "@/lib/Seo";
 import { ArrowRight, BadgeCheck, Droplets, Hammer, ShieldCheck, Star, Wrench, Phone, Quote, CheckCircle2 } from "lucide-react";
 import { Hero3D } from "@/components/Hero3D";
 import project1 from "@/assets/project-1.jpg";
@@ -7,19 +8,13 @@ import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Georgia Waterproofing | Norcross Basement & Foundation Experts" },
-      { name: "description", content: "Stop water damage at the source. Basement waterproofing, French drains & crawl space encapsulation in Norcross & Metro Atlanta. Free estimates — (678) 580-5807." },
-      { property: "og:title", content: "Georgia Waterproofing — Protect Your Home, Year Round" },
-      { property: "og:description", content: "Licensed & insured waterproofing experts trusted across Metro Atlanta." },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: HomePage,
-});
+const SEO = (
+  <Seo
+    title="Georgia Waterproofing | Norcross Basement & Foundation Experts"
+    description="Stop water damage at the source. Basement waterproofing, French drains & crawl space encapsulation in Norcross & Metro Atlanta. Free estimates — (678) 580-5807."
+    path="/"
+  />
+);
 
 const projects = [
   { src: project1, label: "French Drain Installation" },
@@ -58,9 +53,10 @@ const services = [
   { icon: Hammer, title: "Sump Pump Systems", desc: "Reliable primary + battery-backup pumps that keep working when the power doesn't." },
 ];
 
-function HomePage() {
+export default function HomePage() {
   return (
     <>
+      {SEO}
       {/* ============ HERO ============ */}
       <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
         <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:24px_24px]" />

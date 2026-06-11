@@ -1,25 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
 import { motion } from "framer-motion";
 import { Clock, Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { z } from "zod";
-import { submitContact } from "@/lib/contact.functions";
 import { toast } from "sonner";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Us | Georgia Waterproofing — Free Estimates" },
-      { name: "description", content: "Request a free waterproofing estimate. Call (678) 580-5807 or use the form. Serving Norcross & Metro Atlanta." },
-      { property: "og:title", content: "Contact Georgia Waterproofing" },
-      { property: "og:description", content: "Free, no-pressure waterproofing quotes across Metro Atlanta." },
-      { property: "og:url", content: "/contact" },
-    ],
-    links: [{ rel: "canonical", href: "/contact" }],
-  }),
-  component: ContactPage,
-});
+import { Seo } from "@/lib/Seo";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -29,8 +13,7 @@ const formSchema = z.object({
   message: z.string().trim().min(10, "Tell us a bit more (10+ chars)").max(2000),
 });
 
-function ContactPage() {
-  const submit = useServerFn(submitContact);
+export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
 
@@ -44,9 +27,15 @@ function ContactPage() {
     }
     setSubmitting(true);
     try {
-      await submit({ data: parsed.data });
+      const { name, email, phone, service, message } = parsed.data;
+      const subject = encodeURIComponent(`New quote request from ${name} — ${service}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nMessage:\n${message}`,
+      );
+      // Open user's mail client pre-filled with the request.
+      window.location.href = `mailto:waterproofingandtreeservices.ga@gmail.com?subject=${subject}&body=${body}`;
       setDone(true);
-      toast.success("Got it! We'll be in touch within 1 business day.");
+      toast.success("Opening your email app. We'll be in touch within 1 business day.");
       (e.currentTarget as HTMLFormElement).reset();
     } catch {
       toast.error("Something went wrong. Please call (678) 580-5807.");
@@ -57,6 +46,11 @@ function ContactPage() {
 
   return (
     <>
+      <Seo
+        title="Contact Us | Georgia Waterproofing — Free Estimates"
+        description="Request a free waterproofing estimate. Call (678) 580-5807 or use the form. Serving Norcross & Metro Atlanta."
+        path="/contact"
+      />
       <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">

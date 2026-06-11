@@ -1,21 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Seo } from "@/lib/Seo";
 import { Award, HeartHandshake, ShieldCheck, Sparkles, ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.png";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us | Georgia Waterproofing — Norcross, GA" },
-      { name: "description", content: "Locally owned waterproofing experts based in Norcross, GA. Honest, licensed, and trusted across Metro Atlanta for over a decade." },
-      { property: "og:title", content: "About Georgia Waterproofing" },
-      { property: "og:description", content: "Locally owned waterproofing experts trusted across Metro Atlanta." },
-      { property: "og:url", content: "/about" },
-    ],
-    links: [{ rel: "canonical", href: "/about" }],
-  }),
-  component: AboutPage,
-});
 
 const values = [
   { icon: ShieldCheck, title: "Integrity", desc: "We never sell what you don't need. Honest assessments, transparent pricing — every single job." },
@@ -24,9 +12,14 @@ const values = [
   { icon: Sparkles, title: "Craftsmanship", desc: "Permanent solutions, not patches. Every system we install is built to outlast the home it protects." },
 ];
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <>
+      <Seo
+        title="About Us | Georgia Waterproofing — Norcross, GA"
+        description="Locally owned waterproofing experts based in Norcross, GA. Honest, licensed, and trusted across Metro Atlanta for over a decade."
+        path="/about"
+      />
       <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
